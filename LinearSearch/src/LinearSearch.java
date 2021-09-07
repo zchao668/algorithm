@@ -4,7 +4,7 @@ public class LinearSearch {
     private LinearSearch(){}
 
     //使用static设置此类为静态，则不用新建对象，直接就可以调用
-    public static int search(int[] data, int target) {
+    public static <E> int search(E[] data, E target) {
 
         for (int i = 0; i < data.length; i++) {
             if (data[i] == target) {
@@ -16,7 +16,7 @@ public class LinearSearch {
 
     public static void main(String[] args) {
 
-        int[] data = {24, 18, 4, 22, 3, 16, 33, 55};
+        Integer[] data = {24, 18, 4, 22, 3, 16, 33, 55};
 
         int res = LinearSearch.search(data, 16);
         System.out.println(res);
