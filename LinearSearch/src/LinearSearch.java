@@ -1,6 +1,10 @@
 public class LinearSearch {
 
-    public int search(int[] data, int target) {
+    //把构造函数设置为私有，用户则不可以进行new LinearSearch
+    private LinearSearch(){}
+
+    //使用static设置此类为静态，则不用新建对象，直接就可以调用
+    public static int search(int[] data, int target) {
 
         for (int i = 0; i < data.length; i++) {
             if (data[i] == target) {
@@ -14,11 +18,10 @@ public class LinearSearch {
 
         int[] data = {24, 18, 4, 22, 3, 16, 33, 55};
 
-        LinearSearch ls = new LinearSearch();
-        int res = ls.search(data, 16);
+        int res = LinearSearch.search(data, 16);
         System.out.println(res);
 
-        int res1 = ls.search(data,666);
+        int res1 = LinearSearch.search(data,666);
         System.out.println(res1);
     }
 }
